@@ -8,6 +8,7 @@ import AnalysisResults from "@/components/AnalysisResults";
 import { Eye, FileText, Calendar, TrendingUp } from "lucide-react";
 
 const Dashboard = () => {
+  console.log('Dashboard component rendering');
   const [selectedFile, setSelectedFile] = useState(null);
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [analysisResults, setAnalysisResults] = useState(null);
