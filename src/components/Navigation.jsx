@@ -23,20 +23,22 @@ const Navigation = ({ isAuthenticated = false }) => {
                   Dashboard
                 </Button>
               </Link>
-              <Button variant="outline" size="sm">
-                Sign Out
-              </Button>
+              <Link to="/">
+                <Button variant="outline" size="sm">
+                  Sign Out
+                </Button>
+              </Link>
             </>
           ) : (
             <>
               <Link to="/login">
-                <Button variant="ghost" size="sm">
+                <Button variant="ghost" size="sm" className="hover-lift">
                   Sign In
                 </Button>
               </Link>
               <Link to="/signup">
                 <Button size="sm" className="hover-lift">
-                  Get Started
+                  Sign Up
                 </Button>
               </Link>
             </>

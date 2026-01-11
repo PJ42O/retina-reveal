@@ -8,7 +8,8 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Dashboard from "./pages/Dashboard";
 import NotFound from "./pages/NotFound";
-
+import OCTUploader from "./pages/OCTUploader";
+import Eye from "./pages/Eye";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -22,7 +23,9 @@ const App = () => (
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/dashboard" element={<Dashboard />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="/OCTUploader" element={<OCTUploader />} />
+          <Route path="/Eye" element={<Eye />} />
+          
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

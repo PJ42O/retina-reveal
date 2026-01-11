@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
@@ -14,7 +15,7 @@ const Index = () => {
     {
       icon: <Shield className="h-6 w-6" />,
       title: "Secure & Private",
-      description: "Your medical data is encrypted and protected with enterprise-level security"
+      description: "Your medical data is encrypted and protected with us."
     },
     {
       icon: <Zap className="h-6 w-6" />,
@@ -23,23 +24,32 @@ const Index = () => {
     },
     {
       icon: <Users className="h-6 w-6" />,
-      title: "Expert Validated",
-      description: "Our AI models are trained and validated by leading ophthalmologists worldwide"
+      title: "Validated Results",
+      description: "Our AI models are trained and validated on thousands of retinal images."
     }
   ];
 
   const testimonials = [
     {
-      name: "Dr. Sarah Johnson",
-      role: "Ophthalmologist",
-      content: "RetinaAI has revolutionized how we screen for retinal diseases. The accuracy is remarkable.",
+      name: "Achal Panday",
+      role: "Full Stack Developer",
+      content: "It was a great experience.",
+      // rating: 5
+    },{
+      name: "Gaurav Kshirsagar",
+      role: "Data Scientist",
+      content: "It was a great experience.",
       rating: 5
-    },
-    {
-      name: "Michael Chen",
-      role: "Patient",
-      content: "Early detection through RetinaAI helped me get the treatment I needed. Truly life-changing.",
-      rating: 5
+    },{
+      name: "Shitanshu Yadav",
+      role: "Data Engineer",
+      content: "I liked My Work.",
+      // rating: 5
+    },{
+      name: "Prajwal Dhanawade",
+      role: "Full Stack Developer",
+      content: "It was a great experience.",
+      // rating: 5
     }
   ];
 
@@ -62,13 +72,13 @@ const Index = () => {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/signup">
-                <Button size="lg" variant="secondary" className="text-lg px-8 hover-lift">
+                <Button size="lg" variant="secondary" className="text-lg px-8 ">
                   Start Free Analysis
                   <ChevronRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
               <Link to="/login">
-                <Button size="lg" variant="outline" className="text-lg px-8 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+                <Button size="lg" variant="outline" className="text-lg px-8 border-primary-foreground text-primary hover:bg-primary-foreground hover:text-primary hover-lift">
                   Sign In
                 </Button>
               </Link>
@@ -77,15 +87,15 @@ const Index = () => {
             <div className="flex items-center justify-center space-x-8 text-sm opacity-80">
               <div className="flex items-center space-x-2">
                 <Shield className="h-4 w-4" />
-                <span>HIPAA Compliant</span>
+                <span>Secure & Confidential</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Star className="h-4 w-4" />
-                <span>FDA Approved AI</span>
+                <span>AI-Driven Diagnostics</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Users className="h-4 w-4" />
-                <span>10k+ Patients</span>
+                <span>Thousands of Images Analyzed</span>
               </div>
             </div>
           </div>
@@ -164,9 +174,9 @@ const Index = () => {
       <section className="py-20 bg-muted/30">
         <div className="container">
           <div className="text-center space-y-4 mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold">Trusted by Professionals</h2>
+            <h2 className="text-3xl md:text-4xl font-bold">Build By</h2>
             <p className="text-xl text-muted-foreground">
-              See what medical professionals and patients say about RetinaAI
+              Students of A. P. Shah Intitute of Technology
             </p>
           </div>
           
@@ -174,11 +184,11 @@ const Index = () => {
             {testimonials.map((testimonial, index) => (
               <Card key={index} className="medical-card animate-scale-in" style={{ animationDelay: `${index * 0.1}s` }}>
                 <CardContent className="p-6">
-                  <div className="flex items-center space-x-1 mb-4">
+                  {/* <div className="flex items-center space-x-1 mb-4">
                     {[...Array(testimonial.rating)].map((_, i) => (
                       <Star key={i} className="h-4 w-4 fill-primary text-primary" />
                     ))}
-                  </div>
+                  </div> */}
                   <p className="text-muted-foreground mb-4 italic">
                     "{testimonial.content}"
                   </p>
@@ -200,11 +210,11 @@ const Index = () => {
             <h2 className="text-3xl md:text-4xl font-bold">
               Start Your Retinal Health Journey Today
             </h2>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-xl text-muted-foreground ">
               Early detection saves sight. Join thousands who trust RetinaAI for their eye health screening.
             </p>
             <Link to="/signup">
-              <Button size="lg" className="text-lg px-8 hover-lift">
+              <Button size="lg" className="text-lg px-8 ">
                 Get Started Free
                 <ChevronRight className="ml-2 h-5 w-5" />
               </Button>

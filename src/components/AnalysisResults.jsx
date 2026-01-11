@@ -3,21 +3,8 @@ import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { Eye, AlertTriangle, CheckCircle, Info } from "lucide-react";
 
-interface AnalysisResult {
-  condition: string;
-  probability: number;
-  severity: 'low' | 'medium' | 'high';
-  description: string;
-}
-
-interface AnalysisResultsProps {
-  results: AnalysisResult[];
-  overallRisk: 'low' | 'medium' | 'high';
-  timestamp: string;
-}
-
-const AnalysisResults = ({ results, overallRisk, timestamp }: AnalysisResultsProps) => {
-  const getRiskStyle = (severity: 'low' | 'medium' | 'high') => {
+const AnalysisResults = ({ results, overallRisk, timestamp }) => {
+  const getRiskStyle = (severity) => {
     switch (severity) {
       case 'low':
         return { bg: 'bg-success-light', text: 'text-success', border: 'border-success' };
@@ -25,10 +12,12 @@ const AnalysisResults = ({ results, overallRisk, timestamp }: AnalysisResultsPro
         return { bg: 'bg-warning-light', text: 'text-warning', border: 'border-warning' };
       case 'high':
         return { bg: 'bg-destructive/10', text: 'text-destructive', border: 'border-destructive' };
+      default:
+        return { bg: '', text: '', border: '' };
     }
   };
 
-  const getRiskIcon = (severity: 'low' | 'medium' | 'high') => {
+  const getRiskIcon = (severity) => {
     switch (severity) {
       case 'low':
         return <CheckCircle className="h-4 w-4" />;
@@ -36,6 +25,8 @@ const AnalysisResults = ({ results, overallRisk, timestamp }: AnalysisResultsPro
         return <Info className="h-4 w-4" />;
       case 'high':
         return <AlertTriangle className="h-4 w-4" />;
+      default:
+        return null;
     }
   };
 

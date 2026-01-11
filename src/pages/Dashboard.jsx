@@ -2,9 +2,11 @@ import { useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+
 import Navigation from "@/components/Navigation";
 import PhotoUpload from "@/components/PhotoUpload";
 import AnalysisResults from "@/components/AnalysisResults";
+
 import { Eye, FileText, Calendar, TrendingUp } from "lucide-react";
 
 const Dashboard = () => {
@@ -73,10 +75,10 @@ const Dashboard = () => {
       <div className="container py-8">
         <div className="space-y-8 animate-fade-in">
           {/* Header */}
-          <div className="space-y-2">
-            <h1 className="text-3xl font-bold">Dashboard</h1>
-            <p className="text-muted-foreground">
-              Upload retina photos for AI-powered disease detection and analysis
+          <div className="space-y-6 text-center">
+            <h1 className="text-3xl font-bold">Welcome to Retina</h1>
+            <p className="text-muted-foreground mb-9">
+              Upload retina photos for AI-powered disease detection and analysis beta
             </p>
           </div>
 
