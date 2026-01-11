@@ -1,11 +1,13 @@
 import { useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Switch } from "@/components/ui/switch";
 import { Upload, Camera, Image, Loader2 } from "lucide-react";
 
 const PhotoUpload = ({ onPhotoSelect, onAnalyze, isAnalyzing }) => {
   const [selectedFile, setSelectedFile] = useState(null);
   const [previewUrl, setPreviewUrl] = useState(null);
+  const [retinaEnabled, setRetinaEnabled] = useState(true);
   const fileInputRef = useRef(null);
 
   const handleFileSelect = (file) => {
@@ -125,6 +127,17 @@ const PhotoUpload = ({ onPhotoSelect, onAnalyze, isAnalyzing }) => {
               "Analyze Photo"
             )}
           </Button>
+
+          <div className="flex items-center gap-3 px-4 py-2 rounded-lg border bg-card">
+            <span className="text-sm font-medium whitespace-nowrap">
+              Retina {retinaEnabled ? "On" : "Off"}
+            </span>
+            <Switch
+              checked={retinaEnabled}
+              onCheckedChange={setRetinaEnabled}
+              disabled={isAnalyzing}
+            />
+          </div>
         </div>
 
         {/* File Requirements */}
